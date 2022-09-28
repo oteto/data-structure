@@ -1,7 +1,5 @@
 # Learn Data Structure
 
-## Overview
-
 udemy の [The Ultimate JavaScript Coding Interview & Computer Science Bootcamp
 with Animated Examples] を Deno でやっていく
 
