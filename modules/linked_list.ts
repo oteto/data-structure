@@ -1,11 +1,10 @@
 import { assertEquals } from "../deps.ts";
+import { nonNullable, type Nullable } from "./utils/nullable.ts";
 
 type Node<T> = {
   value: T;
-  next: Node<T> | null;
+  next: Nullable<Node<T>>;
 };
-
-type Nullable<T> = T | null;
 
 const newNode = <T>(value: T): Node<T> => ({ value, next: null });
 
@@ -38,10 +37,7 @@ class LinkedList<T> {
       this.length = 1;
       return this;
     }
-    if (this.tail === null) {
-      throw new Error("tail is null");
-    }
-    this.tail.next = node;
+    nonNullable(this.tail).next = node;
     this.tail = node;
     this.length++;
     return this;
@@ -71,10 +67,7 @@ class LinkedList<T> {
         newTail = curr;
       }
     }
-    if (newTail === null) {
-      throw new Error("new tail failed");
-    }
-    newTail.next = null;
+    nonNullable(newTail).next = null;
     this.tail = newTail;
     this.length -= 1;
     return value;
@@ -135,10 +128,7 @@ class LinkedList<T> {
       return null;
     }
     const node = newNode(value);
-    const targetBefore = this.#getNode(index - 1);
-    if (targetBefore === null) {
-      throw new Error("target before is null");
-    }
+    const targetBefore = nonNullable(this.#getNode(index - 1));
     node.next = targetBefore.next;
     targetBefore.next = node;
     this.length += 1;
@@ -155,14 +145,8 @@ class LinkedList<T> {
     if (index < 0 || this.length - 1 < index) {
       return null;
     }
-    const targetBefore = this.#getNode(index - 1);
-    if (targetBefore === null) {
-      throw new Error("target before is null");
-    }
-    const target = targetBefore.next;
-    if (target === null) {
-      throw new Error("target is null");
-    }
+    const targetBefore = nonNullable(this.#getNode(index - 1));
+    const target = nonNullable(targetBefore.next);
     targetBefore.next = target.next;
     target.next = null;
     this.length -= 1;
@@ -208,10 +192,7 @@ class LinkedList<T> {
       }
       i++;
     }
-    if (this.tail === null) {
-      throw new Error("tail is null");
-    }
-    return this.tail;
+    return nonNullable(this.tail);
   }
 }
 
