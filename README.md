@@ -13,3 +13,4 @@ with Animated Examples] を Deno でやっていく
 - 2022/09/28: Section5 (Doubly Linked Lists) No.40 まで (Section5 完了)
 - 2022/09/28: Section6 (Stack and Queue) No.44 まで
 - 2022/09/29: Section7 (Trees) No.51 まで（Section6 完了）
+- 2022/09/30: Section7 (Trees) No.56 まで（Section7 完了）
