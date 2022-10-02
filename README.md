@@ -14,3 +14,6 @@ with Animated Examples] を Deno でやっていく
 - 2022/09/28: Section6 (Stack and Queue) No.44 まで
 - 2022/09/29: Section7 (Trees) No.51 まで（Section6 完了）
 - 2022/09/30: Section7 (Trees) No.56 まで（Section7 完了）
+- 2022/10/02: Section8 (Hash Table) No.64 まで（Section8 完了）
+- 2022/10/02: Section9 (Graph) No.72 まで（Section9 完了）
+- 2022/10/02: Section10 (Recursive) No.75 まで（Section10 完了）
