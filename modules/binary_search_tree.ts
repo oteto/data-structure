@@ -1,7 +1,7 @@
 import { assertEquals } from "../deps.ts";
 import { Nullable } from "./utils/nullable.ts";
 
-type Node<T> = {
+export type Node<T> = {
   value: T;
   left: Nullable<Node<T>>;
   right: Nullable<Node<T>>;
@@ -9,7 +9,7 @@ type Node<T> = {
 
 const newNode = <T>(value: T): Node<T> => ({ value, left: null, right: null });
 
-class BinarySearchTree<T> {
+export class BinarySearchTree<T> {
   root: Nullable<Node<T>>;
 
   constructor() {

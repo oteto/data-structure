@@ -12,7 +12,7 @@ const newNode = <T>(value: T): Node<T> => ({ value, next: null });
 //               last               first
 // enqueue ->>    ◯ <-next- ◯ <-next- ◯    ->> dequeue
 // +++++++++++++++++++++++++++++++++++++++++++++++++++++
-class Queue<T> {
+export class Queue<T> {
   first: Nullable<Node<T>>;
   last: Nullable<Node<T>>;
   length: number;
